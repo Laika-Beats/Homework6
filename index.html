@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+        .column {
+            float: left;
+            padding: 10px;
+        }
+        .left {
+            width: 30%;
+        }
+        .right{
+            width: 70%;
+        }
+
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column left">
+            <h2>Column 1</h2>
+            <form id="city-form">
+                <label for="city-input">City</label>
+                <input type="text" id="city-input"><br>
+          
+                <!-- Button triggers new city to be added -->
+                <input id="find-city" type="submit" value="Enter City Name">
+              </form>
+        </div>
+        
+        <div class="column right">
+            <h2>Column 2</h2>
+                    <!-- Retrieved data will be dumped here -->
+            <div class="city"></div>
+            <div class="date"></div>
+            <div class="wind"></div>
+            <div class="humidity"></div>
+            <div class="temp"></div>
+            <div class="tempF"></div>
+        </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#find-city").on("click", function(event) {
+            event.preventDefault();
+            var city = $("#city-input").val();
+            // Here we are building the URL we need to query the database
+            var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=e5a5d4ba5ab1d31ad291b42947d0606b";
+
+            
+            $.ajax({
+            url: queryURL,
+            method: "GET"
+            }).then(function(response) {
+            console.log(response);
+
+            console.log(response.list[0].main.temp);
+
+        
+            var cityDiv = $(".city").text(city)
+            var date = $(".date").text(response.list[0].dt_txt)
+            var windDiv = $(".wind").text(response.list[0].wind.speed);
+            var humDiv = $(".humidity").text(response.list[0].main.humidity);
+
+            var kelvTemp = parseInt(response.list[0].main.temp);
+            var farTemp = (kelvTemp - 273.15) * 1.80 + 32;
+            var tempDiv = $(".temp").text(farTemp);
+            });
+            
+        });
+    </script>
+</body>
+</html>
