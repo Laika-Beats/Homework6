@@ -55,6 +55,7 @@
             width: 100%;
             height: 200px;
             background: url('https://images.pexels.com/photos/417045/pexels-photo-417045.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+            background-size: cover;
             
         }
 
@@ -130,7 +131,7 @@
             event.preventDefault();
             var city = $("#city-input").val();
             // Here we are building the URL we need to query the database
-            var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=e5a5d4ba5ab1d31ad291b42947d0606b";
+            var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=6e32b6954fb476d7d55a99a8027944ab";
 
             
             $.ajax({
