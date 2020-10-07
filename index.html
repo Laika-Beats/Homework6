@@ -13,16 +13,17 @@
         .col-sm {
             float: left;
             padding: 20px;
-            margin: 20px
+            margin: 30px
+            
         }
         .left {
-            width: 30%;
+            width: 10%;
         }
         .middle {
-            width: 40%
+            width: 70%
         }
         .right{
-            width: 30%;
+            width: 20%;
         }
 
         .row:after{
@@ -86,6 +87,7 @@
                     <div class="city"></div>
                     <div class="date"></div>
                 </h3><br>
+                <div class="icon"></div>
                 <h4>
                     <div class="temp"></div>
                     <div class="wind"></div>
@@ -142,6 +144,10 @@
             const today = new Date()
             var newToday = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
             var tomorrow = (today.getMonth()+1)+'-'+(today.getDate()+1)+'-'+today.getFullYear();
+            var dayAfter = (today.getMonth()+1)+'-'+(today.getDate()+2)+'-'+today.getFullYear();
+            var dayAfter2 = (today.getMonth()+1)+'-'+(today.getDate()+3)+'-'+today.getFullYear();
+            var dayAfter3 = (today.getMonth()+1)+'-'+(today.getDate()+4)+'-'+today.getFullYear();
+            var dayAfter4 = (today.getMonth()+1)+'-'+(today.getDate()+5)+'-'+today.getFullYear();
            
 
             ///Today's weather
