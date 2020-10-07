@@ -16,8 +16,11 @@
         .left {
             width: 30%;
         }
+        .middle {
+            width: 40%
+        }
         .right{
-            width: 70%;
+            width: 30%;
         }
 
         .row:after{
@@ -31,7 +34,7 @@
 <body>
     <div class="row">
         <div class="column left">
-            <h2>Column 1</h2>
+            <h2>Search City</h2>
             <form id="city-form">
                 <label for="city-input">City</label>
                 <input type="text" id="city-input"><br>
@@ -41,16 +44,47 @@
               </form>
         </div>
         
-        <div class="column right">
-            <h2>Column 2</h2>
-                    <!-- Retrieved data will be dumped here -->
-            <div class="city"></div>
-            <div class="date"></div>
-            <div class="wind"></div>
-            <div class="humidity"></div>
-            <div class="temp"></div>
-            <div class="tempF"></div>
+        <div class="column middle">
+                <h2>Today's Weather</h2>
+                        <!-- Retrieved data will be dumped here -->
+                <h3>
+                    <div class="city"></div>
+                    <div class="date"></div>
+                </h3>
+                <h4>
+                    <div class="temp"></div>
+                    <div class="wind"></div>
+                    <div class="humidity"></div>
+                </h4>
+                
         </div>
+        <div class="column right">
+            <h2>Next 5 Days</h2>
+                    <!-- Retrieved data will be dumped here -->
+            <div class="date1"></div>
+            <div class="humidity1"></div>
+            <div class="temp1"></div>
+            
+            <br>
+            <div class="date2"></div>
+            <div class="humidity2"></div>
+            <div class="temp2"></div>
+
+            <br>
+            <div class="date3"></div>
+            <div class="humidity3"></div>
+            <div class="temp3"></div>
+
+            <br>
+            <div class="date4"></div>
+            <div class="humidity4"></div>
+            <div class="temp4"></div>
+
+            <br>
+            <div class="date5"></div>
+            <div class="humidity5"></div>
+            <div class="temp5"></div>
+    </div>
         
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -70,15 +104,24 @@
 
             console.log(response.list[0].main.temp);
 
-        
+            ///Today's weather
             var cityDiv = $(".city").text(city)
             var date = $(".date").text(response.list[0].dt_txt)
-            var windDiv = $(".wind").text(response.list[0].wind.speed);
-            var humDiv = $(".humidity").text(response.list[0].main.humidity);
+            var windDiv = $(".wind").text("Wind Speed (MPH): " + response.list[0].wind.speed);
+            var humDiv = $(".humidity").text("Humidity: " + response.list[0].main.humidity + "%");
 
             var kelvTemp = parseInt(response.list[0].main.temp);
             var farTemp = (kelvTemp - 273.15) * 1.80 + 32;
-            var tempDiv = $(".temp").text(farTemp);
+            var tempDiv = $(".temp").text("Temperature (F): " + farTemp);
+
+            ///
+            var date1 = $(".date1").text(response.list[1].dt_txt)
+            var windDiv1 = $(".wind1").text("Wind (MPH): " + response.list[1].wind.speed);
+            var humDiv1 = $(".humidity1").text("Humidity: " + response.list[1].main.humidity + "%");
+
+            var kelvTemp1 = parseInt(response.list[1].main.temp);
+            var farTemp1 = (kelvTemp1 - 273.15) * 1.80 + 32;
+            var tempDiv1 = $(".temp1").text("Temp (F): " + farTemp);
             });
             
         });
