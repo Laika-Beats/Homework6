@@ -171,7 +171,7 @@
             
 
             ///
-            var date2 = $(".date2").text(response.list[15].dt_txt)
+            var date2 = $(".date2").text(dayAfter)
             var windDiv2 = $(".wind2").text("Wind (MPH): " + response.list[15].wind.speed);
             var humDiv2 = $(".humidity2").text("Humidity: " + response.list[15].main.humidity + "%");
 
@@ -181,7 +181,7 @@
             
 
             ///
-            var date3 = $(".date3").text(response.list[23].dt_txt)
+            var date3 = $(".date3").text(dayAfter2)
             var windDiv3 = $(".wind3").text("Wind (MPH): " + response.list[23].wind.speed);
             var humDiv3 = $(".humidity3").text("Humidity: " + response.list[23].main.humidity + "%");
 
@@ -190,7 +190,7 @@
             var tempDiv3 = $(".temp3").text("Temp (°F): " + farTemp.toFixed(1));
 
             ///
-            var date4 = $(".date4").text(response.list[31].dt_txt)
+            var date4 = $(".date4").text(dayAfter3)
             var windDiv4 = $(".wind4").text("Wind (MPH): " + response.list[31].wind.speed);
             var humDiv4 = $(".humidity4").text("Humidity: " + response.list[31].main.humidity + "%");
 
@@ -198,8 +198,8 @@
             var farTemp4 = (kelvTemp1 - 273.15) * 1.80 + 32;
             var tempDiv4 = $(".temp4").text("Temp (°F): " + farTemp.toFixed(1));
 
-            ///
-            var date5 = $(".date5").text(response.list[39].dt_txt)
+            ///response.list[39].dt_txt old temp
+            var date5 = $(".date5").text(dayAfter4)
             var windDiv5 = $(".wind5").text("Wind (MPH): " + response.list[39].wind.speed);
             var humDiv5 = $(".humidity5").text("Humidity: " + response.list[39].main.humidity + "%");
 
