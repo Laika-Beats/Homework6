@@ -31,6 +31,10 @@
             clear: both;
         }
 
+        .menu {
+            margin-left: 20px;
+        }
+
         #find-city {
             padding: 10px;
             margin: 10px;
@@ -135,9 +139,14 @@
 
             console.log(response.list[0].main.temp);
 
+            const today = new Date()
+            var newToday = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
+            var tomorrow = (today.getMonth()+1)+'-'+(today.getDate()+1)+'-'+today.getFullYear();
+           
+
             ///Today's weather
             var cityDiv = $(".city").text(city)
-            var date = $(".date").text(response.list[0].dt_txt)
+            var date = $(".date").text(newToday)
             var windDiv = $(".wind").text("Wind Speed (MPH): " + response.list[0].wind.speed);
             var humDiv = $(".humidity").text("Humidity: " + response.list[0].main.humidity + "%");
 
@@ -146,7 +155,7 @@
             var tempDiv = $(".temp").text("Temperature (°F): " + farTemp.toFixed(1));
 
             ///
-            var date1 = $(".date1").text(response.list[7].dt_txt)
+            var date1 = $(".date1").text(tomorrow)
             var windDiv1 = $(".wind1").text("Wind (MPH): " + response.list[7].wind.speed);
             var humDiv1 = $(".humidity1").text("Humidity: " + response.list[7].main.humidity + "%");
 
