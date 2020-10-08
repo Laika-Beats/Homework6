@@ -17,13 +17,16 @@
             
         }
         .left {
-            width: 10%;
+            background-color: whitesmoke;
+            width: 25%;
+            
         }
         .middle {
-            width: 70%
+            width: 50%
         }
         .right{
-            width: 20%;
+            background-color: whitesmoke;
+            width: 25%;
         }
 
         .row:after{
@@ -59,6 +62,11 @@
             
         }
 
+        #buttons-view {
+            margin: 10px;
+            padding: 10px;
+        }
+
 
     </style>
 </head>
@@ -79,7 +87,7 @@
                 <!-- Button triggers new city to be added -->
                 <input id="find-city" type="submit" value="Enter City Name">
             </form>
-            <div id="buttons-view"></div>
+            <div id="buttons-view" style=></div>
 
         </div>
         
@@ -260,10 +268,10 @@
             $(document).on("click", ".newCity");
       });
 
-      function getCityData(){
+      function getCityData(){ ////grabs and displays data when you click one of the city buttons under the search bar
         console.log($(this).text());
         var cityTitle = $(this).text().replace(/ /g, "+");
-        var cityTitle2 = $(this).text();
+        var cityTitle2 = $(this).text(); //variable so the +'s don't show up when city nae is diplayed
         console.log(cityTitle);
         var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=" + cityTitle + "&appid=6e32b6954fb476d7d55a99a8027944ab";
 
