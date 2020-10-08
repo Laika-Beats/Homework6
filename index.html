@@ -263,6 +263,7 @@
       function getCityData(){
         console.log($(this).text());
         var cityTitle = $(this).text().replace(/ /g, "+");
+        var cityTitle2 = $(this).text();
         console.log(cityTitle);
         var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=" + cityTitle + "&appid=6e32b6954fb476d7d55a99a8027944ab";
 
@@ -284,7 +285,7 @@
             
 
                 ///Today's weather
-                var cityDiv = $(".city").text(city)
+                var cityDiv = $(".city").text(cityTitle2)
                 var date = $(".date").text(newToday)
                 var windDiv = $(".wind").text("Wind Speed (MPH): " + response.list[0].wind.speed);
                 var humDiv = $(".humidity").text("Humidity: " + response.list[0].main.humidity + "%");
