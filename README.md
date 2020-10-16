@@ -7,7 +7,8 @@ Uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather d
 1. Installation
 2. Usage
 3. Contact
-4. License5. Contributing
+4. License
+5. Contributing
 
 
 ***************
