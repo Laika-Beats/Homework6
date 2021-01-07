@@ -5,23 +5,22 @@ function renderButtons() {
   // (this is necessary otherwise we will have repeat buttons)
   $("#buttons-view").empty();
 
-  // Looping through the array of cities
-  for (var i = 0; i < cities.length; i++) {
-    // Then dynamicaly generating buttons for each city in the array
+  //retrieve items from localStorage
+  var storedCities = JSON.parse(localStorage.getItem("cities"));
+  storedCities.forEach(function (storedCity) {
     var a = $("<button>");
     var b = $("<br>");
     // Adding a class
     a.addClass("newCity");
     // Added a data-attribute
-    a.attr("data-name", cities[i]);
+    a.attr("data-name", storedCity);
     // Provided the initial button text
-    a.text(cities[i]);
+    a.text(storedCity);
     // Added the button to the HTML
     $("#buttons-view").append(a).append(b);
-  }
+  });
 }
 renderButtons();
-
 $("#find-city").on("click", function (event) {
   event.preventDefault();
   // Here we are building the URL we need to query the database
@@ -30,6 +29,19 @@ $("#find-city").on("click", function (event) {
     "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=" +
     city +
     "&appid=6e32b6954fb476d7d55a99a8027944ab";
+
+  // save to localStorage
+  let storage;
+  if (localStorage.getItem("cities") === null) {
+    //if none exist create an empty array
+    storage = [];
+  } else {
+    //if they do exist parse them out in to an array
+    storage = JSON.parse(localStorage.getItem("cities"));
+  }
+  storage.push(city);
+  localStorage.setItem("cities", JSON.stringify(storage));
+  renderButtons();
 
   $.ajax({
     url: queryURL,
