@@ -156,6 +156,9 @@ $("#find-city").on("click", function (event) {
     var tempDiv2 = $(".temp2").text("Temp (°F): " + farTemp.toFixed(1));
 
     ///
+    var iconcode3 = response.list[3].weather[0].icon;
+    var iconurl3 = "http://openweathermap.org/img/w/" + iconcode3 + ".png";
+    var iconDiv3 = $("#wicon2").attr("src", iconurl3);
     var date3 = $(".date3").text(dayAfter2);
     var windDiv3 = $(".wind3").text(
       "Wind (MPH): " + response.list[23].wind.speed
