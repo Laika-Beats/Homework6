@@ -158,7 +158,7 @@ $("#find-city").on("click", function (event) {
     ///
     var iconcode3 = response.list[3].weather[0].icon;
     var iconurl3 = "http://openweathermap.org/img/w/" + iconcode3 + ".png";
-    var iconDiv3 = $("#wicon2").attr("src", iconurl3);
+    var iconDiv3 = $("#wicon3").attr("src", iconurl3);
     var date3 = $(".date3").text(dayAfter2);
     var windDiv3 = $(".wind3").text(
       "Wind (MPH): " + response.list[23].wind.speed
@@ -172,6 +172,9 @@ $("#find-city").on("click", function (event) {
     var tempDiv3 = $(".temp3").text("Temp (°F): " + farTemp.toFixed(1));
 
     ///
+    var iconcode4 = response.list[4].weather[0].icon;
+    var iconurl4 = "http://openweathermap.org/img/w/" + iconcode4 + ".png";
+    var iconDiv4 = $("#wicon4").attr("src", iconurl4);
     var date4 = $(".date4").text(dayAfter3);
     var windDiv4 = $(".wind4").text(
       "Wind (MPH): " + response.list[31].wind.speed
