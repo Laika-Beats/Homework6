@@ -1,86 +1,87 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 .col-sm {
-    float: left;
-    padding: 20px;
-    margin: 30px
-    
+  float: left;
+  padding: 20px;
+  margin: 30px;
 }
 .left {
-    background-color: whitesmoke;
-    width: 25%;
-    
+  background-color: whitesmoke;
+  width: 25%;
 }
 .middle {
-    width: 50%
+  width: 50%;
 }
-.right{
-    background-color: whitesmoke;
-    width: 25%;
+.right {
+  background-color: whitesmoke;
+  width: 25%;
 }
 
-.row:after{
-    content: "";
-    display: table;
-    clear: both;
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .menu {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 #find-city {
-    padding: 10px;
-    margin: 10px;
-    align-items: center;
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
 }
 
 #search {
-    align-items: center;
+  align-items: center;
 }
 
 #city-input {
-    margin: 10px;
-    align-items: center;
+  margin: 10px;
+  align-items: center;
 }
 
 .header-img {
-    width: 100%;
-    height: 300px;
-    background: url('https://images.pexels.com/photos/417045/pexels-photo-417045.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
-    /* Add the blur effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(2px);
-    -webkit-filter: blur(1px);
+  width: 100%;
+  height: 300px;
+  background: url("https://images.pexels.com/photos/417045/pexels-photo-417045.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  /* Add the blur effect */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px);
+  -webkit-filter: blur(1px);
 
-    /* Full height */
-    
-    /* Center and scale the image nicely */
-    
-    
+  /* Full height */
+
+  /* Center and scale the image nicely */
 }
 
 .bg-text {
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-    color: white;
-    font-weight: bold;
-    border: 1px solid #f1f1f1;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
-  }
-
-#buttons-view {
-    margin: 10px;
-    padding: 10px;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 1px solid #f1f1f1;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
 }
 
+#buttons-view {
+  margin: 10px;
+  padding: 10px;
+}
+
+#wicon {
+  height: 100px;
+  width: auto;
+  align-content: center;
+}
