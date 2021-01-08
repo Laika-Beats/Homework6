@@ -316,7 +316,7 @@ function getCityData() {
       today.getFullYear();
 
     ///Today's weather
-    var cityDiv = $(".city").text(city);
+    var cityDiv = $(".city").text(cityTitle);
     var date = $(".date").text(newToday);
     var windDiv = $(".wind").text(
       "Wind Speed (MPH): " + response.list[0].wind.speed
