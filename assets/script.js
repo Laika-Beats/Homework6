@@ -246,6 +246,8 @@ function getCityData() {
   }).then(function (response) {
     var lat = response.city.coord.lat;
     var lon = response.city.coord.lon;
+    var iconcode = response.list[0].weather[0].icon;
+    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
     var uvURL =
       "http://api.openweathermap.org/data/2.5/uvi?lat=" +
       lat +
@@ -274,6 +276,7 @@ function getCityData() {
     });
 
     const today = new Date();
+
     var newToday =
       today.getMonth() + 1 + "-" + today.getDate() + "-" + today.getFullYear();
     var tomorrow =
@@ -313,7 +316,7 @@ function getCityData() {
       today.getFullYear();
 
     ///Today's weather
-    var cityDiv = $(".city").text(cityTitle2);
+    var cityDiv = $(".city").text(city);
     var date = $(".date").text(newToday);
     var windDiv = $(".wind").text(
       "Wind Speed (MPH): " + response.list[0].wind.speed
@@ -321,12 +324,16 @@ function getCityData() {
     var humDiv = $(".humidity").text(
       "Humidity: " + response.list[0].main.humidity + "%"
     );
+    var iconDiv = $("#wicon").attr("src", iconurl);
 
     var kelvTemp = parseInt(response.list[0].main.temp);
     var farTemp = (kelvTemp - 273.15) * 1.8 + 32;
     var tempDiv = $(".temp").text("Temperature (°F): " + farTemp.toFixed(1));
 
     ///
+    var iconcode1 = response.list[1].weather[0].icon;
+    var iconurl1 = "http://openweathermap.org/img/w/" + iconcode1 + ".png";
+    var iconDiv1 = $("#wicon1").attr("src", iconurl1);
     var date1 = $(".date1").text(tomorrow);
     var windDiv1 = $(".wind1").text(
       "Wind (MPH): " + response.list[7].wind.speed
@@ -340,6 +347,9 @@ function getCityData() {
     var tempDiv1 = $(".temp1").text("Temp (°F): " + farTemp.toFixed(1));
 
     ///
+    var iconcode2 = response.list[2].weather[0].icon;
+    var iconurl2 = "http://openweathermap.org/img/w/" + iconcode2 + ".png";
+    var iconDiv2 = $("#wicon2").attr("src", iconurl2);
     var date2 = $(".date2").text(dayAfter);
     var windDiv2 = $(".wind2").text(
       "Wind (MPH): " + response.list[15].wind.speed
@@ -353,6 +363,9 @@ function getCityData() {
     var tempDiv2 = $(".temp2").text("Temp (°F): " + farTemp.toFixed(1));
 
     ///
+    var iconcode3 = response.list[3].weather[0].icon;
+    var iconurl3 = "http://openweathermap.org/img/w/" + iconcode3 + ".png";
+    var iconDiv3 = $("#wicon3").attr("src", iconurl3);
     var date3 = $(".date3").text(dayAfter2);
     var windDiv3 = $(".wind3").text(
       "Wind (MPH): " + response.list[23].wind.speed
@@ -366,6 +379,9 @@ function getCityData() {
     var tempDiv3 = $(".temp3").text("Temp (°F): " + farTemp.toFixed(1));
 
     ///
+    var iconcode4 = response.list[4].weather[0].icon;
+    var iconurl4 = "http://openweathermap.org/img/w/" + iconcode4 + ".png";
+    var iconDiv4 = $("#wicon4").attr("src", iconurl4);
     var date4 = $(".date4").text(dayAfter3);
     var windDiv4 = $(".wind4").text(
       "Wind (MPH): " + response.list[31].wind.speed
@@ -378,7 +394,10 @@ function getCityData() {
     var farTemp4 = (kelvTemp1 - 273.15) * 1.8 + 32;
     var tempDiv4 = $(".temp4").text("Temp (°F): " + farTemp.toFixed(1));
 
-    ///response.list[39].dt_txt old temp
+    ///
+    var iconcode5 = response.list[5].weather[0].icon;
+    var iconurl5 = "http://openweathermap.org/img/w/" + iconcode5 + ".png";
+    var iconDiv5 = $("#wicon5").attr("src", iconurl5);
     var date5 = $(".date5").text(dayAfter4);
     var windDiv5 = $(".wind5").text(
       "Wind (MPH): " + response.list[39].wind.speed
