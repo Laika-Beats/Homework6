@@ -1,8 +1,22 @@
 * {
   box-sizing: border-box;
 }
+@media screen and (max-width: 760px) {
+  .left {
+    background-color: whitesmoke;
+    min-width: 100vw;
+    align-items: center;
+    padding-left: 50px;
+  }
+  .middle {
+    min-width: 100vw;
+  }
+  .right {
+    background-color: whitesmoke;
+    min-width: 100vw;
+  }
+}
 .col-sm {
-  float: left;
   padding: 20px;
   margin: 30px;
 }
@@ -16,12 +30,6 @@
 .right {
   background-color: whitesmoke;
   width: 25%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .menu {
@@ -45,7 +53,7 @@
 
 .header-img {
   width: 100%;
-  height: 300px;
+  height: 40vh;
   background: url("https://images.pexels.com/photos/417045/pexels-photo-417045.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
   /* Add the blur effect */
   background-position: center;
@@ -66,7 +74,7 @@
   font-weight: bold;
   border: 1px solid #f1f1f1;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -84,4 +92,10 @@
   height: 100px;
   width: auto;
   align-content: center;
+}
+
+.newCity {
+  min-width: 5rem;
+  margin: 0.2rem;
+  border: none;
 }
