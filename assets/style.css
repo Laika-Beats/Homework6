@@ -1,5 +1,11 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 @media screen and (max-width: 760px) {
   .left {
@@ -18,18 +24,20 @@
 }
 .col-sm {
   padding: 20px;
-  margin: 30px;
 }
 .left {
-  background-color: whitesmoke;
-  width: 25%;
+  background-color: #68b8d750;
+  width: 25vw;
+  border: 1px solid #f1f1f1;
+  height: 75vh;
 }
 .middle {
-  width: 50%;
+  width: 50vw;
 }
 .right {
-  background-color: whitesmoke;
-  width: 25%;
+  background-color: #68b8d750;
+  width: 25vw;
+  border: 1px solid #f1f1f1;
 }
 
 .menu {
@@ -52,19 +60,12 @@
 }
 
 .header-img {
-  width: 100%;
+  width: 100vw;
   height: 40vh;
-  background: url("https://images.pexels.com/photos/417045/pexels-photo-417045.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
-  /* Add the blur effect */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(2px);
-  -webkit-filter: blur(1px);
+}
 
-  /* Full height */
-
-  /* Center and scale the image nicely */
+.button {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .bg-text {
