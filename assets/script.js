@@ -6,7 +6,15 @@ function renderButtons() {
   $("#buttons-view").empty();
 
   //retrieve items from localStorage
-  var storedCities = JSON.parse(localStorage.getItem("cities"));
+  let storedCities;
+  if (localStorage.getItem("cities") === null) {
+    //if none exist create an empty array
+    storedCities = [];
+  } else {
+    //if they do exist parse them out in to an array
+    storedCities = JSON.parse(localStorage.getItem("cities"));
+  }
+  
   storedCities.forEach(function (storedCity) {
     var a = $("<button>");
     var b = $("<br>");
@@ -52,9 +60,9 @@ $("#find-city").on("click", function (event) {
     var lat = response.city.coord.lat;
     var lon = response.city.coord.lon;
     var iconcode = response.list[0].weather[0].icon;
-    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+    var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
     var uvURL =
-      "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+      "https://api.openweathermap.org/data/2.5/uvi?lat=" +
       lat +
       "&lon=" +
       lon +
