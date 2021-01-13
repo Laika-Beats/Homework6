@@ -35,6 +35,7 @@ body {
 .middle {
   width: 50vw;
   color: #183550;
+  padding-top: 1.3rem;
 }
 .right {
   background-color: #68b8d7b9;
@@ -69,7 +70,7 @@ body {
 
 button {
   margin: 0.2rem;
-  border: 2px solid #68b8d7;
+  border: 1px solid #68b8d7;
   background-color: #183550ad;
   color: white;
   padding: 14px 28px;
@@ -130,6 +131,13 @@ input:hover {
   height: 70px;
   width: auto;
   align-content: center;
+}
+
+.temp,
+.wind,
+.humidity,
+.uvIndex {
+  margin: 0.8rem;
 }
 
 /* .newCity {
