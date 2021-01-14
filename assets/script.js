@@ -34,7 +34,7 @@ $("#find-city").on("click", function (event) {
   // Here we are building the URL we need to query the database
   var city = $("#city-input").val();
   var queryURL =
-    "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     city +
     "&appid=6e32b6954fb476d7d55a99a8027944ab";
 
@@ -237,14 +237,17 @@ function getCityData() {
     // The movie from the textbox is then added to our array
     cities.push(newCity);
 
+    
+
     // Calling renderButtons which handles the processing of our city array
     renderButtons();
     $(document).on("click", ".newCity");
+    
   });
   var cityTitle = $(this).text().replace(/ /g, "+");
   var cityTitle2 = $(this).text(); //variable so the +'s don't show up when city name is displayed
   var queryURL =
-    "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     cityTitle +
     "&appid=6e32b6954fb476d7d55a99a8027944ab";
 
@@ -324,7 +327,7 @@ function getCityData() {
       today.getFullYear();
 
     ///Today's weather
-    var cityDiv = $(".city").text(cityTitle);
+    var cityDiv = $(".city").text(cityTitle2);
     var date = $(".date").text(newToday);
     var windDiv = $(".wind").text(
       "Wind Speed (MPH): " + response.list[0].wind.speed
