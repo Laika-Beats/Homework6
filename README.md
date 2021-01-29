@@ -1,6 +1,9 @@
-Weather Dashboard (Version 1.0)
+Weather Dashboard (Version 1.5)
+https://laika-beats.github.io/myWeatherDashboard/
 
 Uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for any city around the world. Displays today's data as well as the following 5 days.
+
+![](WeatherDashboard.gif)
 
 ***************
 
@@ -15,7 +18,7 @@ Uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather d
 
 Installation:
 
-Open this link in your browser of choice: https://laika-beats.github.io/Homework6/
+Open this link in your browser of choice: https://laika-beats.github.io/myWeatherDashboard/
 
 ***************
 
@@ -23,7 +26,7 @@ Usage:
 
 A.) Enter city name in the search field or choose one of the saved cities. 
 
-B.) Cities you search will be saved and added to the list so you can quickly click and see the data again.
+B.) Cities you search will be saved (via localStorage) and added to the list so you can quickly click and see the data again.
 
 ***************
 
