@@ -9,7 +9,7 @@ body {
 }
 @media screen and (max-width: 760px) {
   .header-img {
-    min-width: 103.8vw;
+    min-width: 102.7vw;
   }
   .left {
     min-width: 100vw;
@@ -21,15 +21,19 @@ body {
   .right {
     min-width: 100vw;
   }
+  .bg-text {
+    margin-left: 13px;
+  }
 }
 .col-sm {
   padding: 20px;
+  width: 100%;
 }
 .left {
   background-color: #68b8d7b9;
   color: white;
   width: 25vw;
-  height: 100vh;
+  height: 100%;
   color: white;
   border: 1px solid #f1f1f1;
 }
@@ -65,9 +69,10 @@ body {
 }
 
 .header-img {
-  width: 101.5vw;
+  width: 102vw;
   height: 40vh;
   object-fit: cover;
+  overflow: hidden;
 }
 
 button {
