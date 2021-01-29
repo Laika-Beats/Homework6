@@ -3,7 +3,7 @@ https://laika-beats.github.io/myWeatherDashboard/
 
 Uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for any city around the world. Displays today's data as well as the following 5 days.
 
-![](WeatherDashboard.gif)
+![](assets/WeatherDashboard.gif)
 
 ***************
 
